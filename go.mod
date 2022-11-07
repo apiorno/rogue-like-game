@@ -2,7 +2,10 @@ module github.com/apiorno/rogue-like-game
 
 go 1.19
 
-require github.com/hajimehoshi/ebiten/v2 v2.4.10
+require (
+	github.com/bytearena/ecs v1.0.0
+	github.com/hajimehoshi/ebiten/v2 v2.4.10
+)
 
 require (
 	github.com/ebitengine/purego v0.0.0-20220905075623-aeed57cda744 // indirect

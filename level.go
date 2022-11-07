@@ -25,6 +25,17 @@ func NewLevel() Level {
 	return l
 }
 
+func (level *Level) DrawLevel(screen *ebiten.Image) {
+	gd := NewGameData()
+	for x := 0; x < gd.ScreenWidth; x++ {
+		for y := 0; y < gd.ScreenHeight; y++ {
+			tile := level.Tiles[level.GetIndexFromXY(x, y)]
+			op := &ebiten.DrawImageOptions{}
+			op.GeoM.Translate(float64(tile.PixelX), float64(tile.PixelY))
+			screen.DrawImage(tile.Image, op)
+		}
+	}
+}
 func (level *Level) GetIndexFromXY(x, y int) int {
 	gd := NewGameData()
 	return (y * gd.ScreenWidth) + x
