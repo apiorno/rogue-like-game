@@ -1,7 +1,8 @@
 package main
 
 type GameMap struct {
-	Dungeons []Dungeon
+	Dungeons     []Dungeon
+	CurrentLevel Level
 }
 
 func NewGameMap() GameMap {
@@ -14,6 +15,6 @@ func NewGameMap() GameMap {
 	}
 	dungeons := make([]Dungeon, 0)
 	dungeons = append(dungeons, d)
-	gm := GameMap{Dungeons: dungeons}
+	gm := GameMap{Dungeons: dungeons, CurrentLevel: l}
 	return gm
 }
