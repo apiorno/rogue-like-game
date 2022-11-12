@@ -22,6 +22,6 @@ func (r *Rect) Center() (int, int) {
 	return centerX, centerY
 }
 
-func (r *Rect) Intersect(other *Rect) bool {
+func (r *Rect) Intersect(other Rect) bool {
 	return (r.X1 <= other.X2 && r.X2 >= other.X1 && r.Y1 <= other.Y1 && r.Y2 >= other.Y1)
 }
